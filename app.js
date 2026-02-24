@@ -1,1 +1,0 @@
-console.log("Harness PoC running");
