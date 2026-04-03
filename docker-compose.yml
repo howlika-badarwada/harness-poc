@@ -14,14 +14,16 @@ services:
       - DRONE_SERVER_PROTO=http                 # use https if you have TLS/ingress
       - DRONE_RPC_SECRET=supersecret            # must match runner
 
-      # GitHub OAuth
+      # GitHub OAuth (configure these with your own credentials)
       - DRONE_GITHUB_SERVER=https://github.com
-      - DRONE_GITHUB_CLIENT_ID=Ov23li7vjoNkkkm07iyE
-      - DRONE_GITHUB_CLIENT_SECRET=5928ac8f72951ff03d5048020b6ff0693a8a5715
+      - DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT_ID}
+      - DRONE_GITHUB_CLIENT_SECRET=${DRONE_GITHUB_CLIENT_SECRET}
       - DRONE_GITHUB_SCOPE=repo,admin:repo_hook,user
 
       # Optional: bootstrap admin
       - DRONE_USER_CREATE=howlika-badarwada:admin,admin:true
+      - DRONE_LOGS_DEBUG=true
+      - DRONE_LOGS_TRACE=true
 
     restart: unless-stopped
 
