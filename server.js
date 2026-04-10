@@ -2,7 +2,7 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Harness PoC is running in Kubernetes \n');
+  res.end('Harness PoC is running in Kubernetes');
 });
 
 server.listen(3000, () => {
